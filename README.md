@@ -2,7 +2,7 @@
 
 This is a temporary unofficial fork of [flutter_keyboard_visibility](https://pub.dev/packages/flutter_keyboard_visibility) as a response to some of the issues we had in [flutter_quill](https://pub.dev/packages/flutter_quill). See [#2290](https://github.com/singerdmx/flutter-quill/issues/2290) and [#1889](https://github.com/singerdmx/flutter-quill/issues/1889).
 
-Will be maintained for a short while once we find a replacement, fix those issues, or develop your own solution in [quill_native_bridge](https://pub.dev/packages/quill_native_bridge).
+Will be maintained for a short while once we find a replacement, fix those issues, or develop our own solution in [quill_native_bridge](https://pub.dev/packages/quill_native_bridge).
 
 We don't recommend using this package as a dependency in packages published to [pub.dev](https://pub.dev/) as it's very likely to be break after a short while, however, if you're developing an app, this might be a temporary replacement for you once those PRs reviewed in the upstream repo or find a replacement:
 
