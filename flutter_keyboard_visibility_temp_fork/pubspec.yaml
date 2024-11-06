@@ -1,6 +1,6 @@
 name: flutter_keyboard_visibility_temp_fork
 description: Temporary fork of flutter_keyboard_visibility plugin to address some issues
-version: 0.1.1
+version: 0.1.2-alpha
 homepage: https://github.com/EchoEllet/flutter_keyboard_visibility_temp_fork
 repository: https://github.com/EchoEllet/flutter_keyboard_visibility_temp_fork
 
@@ -17,7 +17,7 @@ dependencies:
   flutter:
     sdk: flutter
   # For web only
-  web: ^1.0.0
+  web: ">=0.5.1 <2.0.0"
   flutter_web_plugins:
     sdk: flutter
 
@@ -32,12 +32,12 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.jrai.flutter_keyboard_visibility
-        pluginClass: FlutterKeyboardVisibilityPlugin
+        package: com.jrai.flutter_keyboard_visibility_temp_fork
+        pluginClass: FlutterKeyboardVisibilityTempForkPlugin
       ios:
-        pluginClass: FlutterKeyboardVisibilityPlugin
+        pluginClass: FlutterKeyboardVisibilityTempForkPlugin
       web:
-        pluginClass: FlutterKeyboardVisibilityPluginWeb
+        pluginClass: FlutterKeyboardVisibilityTempForkWeb
         fileName: flutter_keyboard_visibility_web.dart
       macos:
         default_package: flutter_keyboard_visibility_macos

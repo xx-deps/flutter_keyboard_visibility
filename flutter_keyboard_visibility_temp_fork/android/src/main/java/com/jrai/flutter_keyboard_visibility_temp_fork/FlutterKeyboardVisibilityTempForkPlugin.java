@@ -1,4 +1,4 @@
-package com.jrai.flutter_keyboard_visibility;
+package com.jrai.flutter_keyboard_visibility_temp_fork;
 
 import android.app.Activity;
 import android.graphics.Rect;
@@ -11,10 +11,9 @@ import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
-import io.flutter.plugin.common.PluginRegistry;
 
 
-public class FlutterKeyboardVisibilityPlugin implements FlutterPlugin, ActivityAware, EventChannel.StreamHandler, ViewTreeObserver.OnGlobalLayoutListener {
+public class FlutterKeyboardVisibilityTempForkPlugin implements FlutterPlugin, ActivityAware, EventChannel.StreamHandler, ViewTreeObserver.OnGlobalLayoutListener {
   private EventChannel.EventSink eventSink;
   private View mainView;
   private boolean isVisible;
