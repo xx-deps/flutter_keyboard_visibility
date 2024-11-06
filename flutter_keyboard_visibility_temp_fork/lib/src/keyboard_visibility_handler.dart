@@ -34,6 +34,10 @@ class KeyboardVisibilityHandler {
   /// reported exclusively by the `isVisible` getter.
   static bool? _testIsVisible;
 
+  /// Debounce timer - if keyboard is bouncing - wait 250 ms to make sure there are no
+  /// more changes. This happens when switching from keyboard to voice typing on Android.
+  static Timer? _debounce;
+
   /// Forces `KeyboardVisibilityHandler` to report `isKeyboardVisible`
   /// for testing purposes.
   ///
@@ -44,14 +48,19 @@ class KeyboardVisibilityHandler {
   }
 
   static void _updateValue(bool newValue) {
-    _testIsVisible = newValue;
+    if (_debounce?.isActive ?? false) _debounce?.cancel();
+    // report keyboard visible quickly, report keyboard not visible after longer delay
+    // in case the keyboard is just switching modes
+    _debounce = Timer(Duration(milliseconds: newValue ? 25 : 250), () {
+      _testIsVisible = newValue;
 
-    // Don't report the same value multiple times
-    if (newValue == _isVisible) {
-      return;
-    }
+      // Don't report the same value multiple times
+      if (newValue == _isVisible) {
+        return;
+      }
 
-    _isVisible = newValue;
-    _onChangeController.add(newValue);
+      _isVisible = newValue;
+      _onChangeController.add(newValue);
+    });
   }
 }

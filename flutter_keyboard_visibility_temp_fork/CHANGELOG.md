@@ -1,3 +1,8 @@
+## [0.1.3-alpha] - November 6, 2024
+
+* Adds iOS notification observer for the floating keyboard (see [PR #2](https://github.com/EchoEllet/flutter_keyboard_visibility_temp_fork/pull/2)).
+* Adds keyboard debounce check (see [PR #2](https://github.com/EchoEllet/flutter_keyboard_visibility_temp_fork/pull/2)).
+
 ## [0.1.2-alpha] - November 5, 2024
 
 * Fixes plugin class name collisions with [flutter_keyboard_visibility](https://pub.dev/packages/flutter_keyboard_visibility) for Web, Android, and iOS. Which updates the platform plugin name to `FlutterKeyboardVisibilityTempForkPlugin`. The desktop platforms don't have issues.
