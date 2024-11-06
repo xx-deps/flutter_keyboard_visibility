@@ -6,9 +6,9 @@
 //  Copyright © 2018 The Chromium Authors. All rights reserved.
 //
 
-#import "FlutterKeyboardVisibilityPlugin.h"
+#import "FlutterKeyboardVisibilityTempForkPlugin.h"
 
-@interface FlutterKeyboardVisibilityPlugin() <FlutterStreamHandler>
+@interface FlutterKeyboardVisibilityTempForkPlugin() <FlutterStreamHandler>
 
 @property (copy, nonatomic) FlutterEventSink flutterEventSink;
 @property (assign, nonatomic) BOOL flutterEventListening;
@@ -18,12 +18,12 @@
 @end
 
 
-@implementation FlutterKeyboardVisibilityPlugin
+@implementation FlutterKeyboardVisibilityTempForkPlugin
 
 +(void) registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
     FlutterEventChannel *stream = [FlutterEventChannel eventChannelWithName:@"flutter_keyboard_visibility" binaryMessenger:[registrar messenger]];
 
-    FlutterKeyboardVisibilityPlugin *instance = [[FlutterKeyboardVisibilityPlugin alloc] init];
+    FlutterKeyboardVisibilityTempForkPlugin *instance = [[FlutterKeyboardVisibilityTempForkPlugin alloc] init];
     [stream setStreamHandler:instance];
 }
 
