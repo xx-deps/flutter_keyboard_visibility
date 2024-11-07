@@ -1,3 +1,7 @@
+## [0.1.3] - November 7, 2024
+
+* Promoted 0.1.3-alpha to stable.
+
 ## [0.1.3-alpha] - November 6, 2024
 
 * Adds iOS notification observer for the floating keyboard (see [PR #2](https://github.com/EchoEllet/flutter_keyboard_visibility_temp_fork/pull/2)).
