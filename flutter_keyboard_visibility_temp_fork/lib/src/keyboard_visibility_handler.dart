@@ -38,29 +38,37 @@ class KeyboardVisibilityHandler {
   /// more changes. This happens when switching from keyboard to voice typing on Android.
   static Timer? _debounce;
 
-  /// Forces `KeyboardVisibilityHandler` to report `isKeyboardVisible`
+  /// Forces [KeyboardVisibilityHandler] to report [isKeyboardVisible]
   /// for testing purposes.
   ///
-  /// `KeyboardVisibilityHandler` will continue reporting `isKeyboardVisible`
+  /// [KeyboardVisibilityHandler] will continue reporting [isKeyboardVisible]
   /// until the value is changed again with this method.
   static void setVisibilityForTesting(bool isKeyboardVisible) {
-    _updateValue(isKeyboardVisible);
+    _applyVisibilityUpdate(isKeyboardVisible);
   }
 
   static void _updateValue(bool newValue) {
     if (_debounce?.isActive ?? false) _debounce?.cancel();
-    // report keyboard visible quickly, report keyboard not visible after longer delay
+    // Report keyboard visible quickly, report keyboard not visible after longer delay
     // in case the keyboard is just switching modes
-    _debounce = Timer(Duration(milliseconds: newValue ? 25 : 250), () {
-      _testIsVisible = newValue;
+    _debounce = Timer(Duration(milliseconds: newValue ? 25 : 250),
+        () => _applyVisibilityUpdate(newValue));
+  }
 
-      // Don't report the same value multiple times
-      if (newValue == _isVisible) {
-        return;
-      }
+  /// Updates visibility immediately without [_debounce] timer.
+  ///
+  /// Only triggers a change if [newValue] differs from the current visibility.
+  ///
+  /// See also: [_updateValue]
+  static void _applyVisibilityUpdate(bool newValue) {
+    _testIsVisible = newValue;
 
-      _isVisible = newValue;
-      _onChangeController.add(newValue);
-    });
+    // Don't report the same value multiple times
+    if (newValue == _isVisible) {
+      return;
+    }
+
+    _isVisible = newValue;
+    _onChangeController.add(newValue);
   }
 }
