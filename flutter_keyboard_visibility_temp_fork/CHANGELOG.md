@@ -1,3 +1,9 @@
+## [0.1.4] - November 24, 2024
+
+* Supports Swift package manager.
+* Migrates the iOS plugin from Objective-C to Swift.
+* Updates the minimum supported iOS from `8.0` to `9.0`.
+
 ## [0.1.3] - November 7, 2024
 
 * Promoted 0.1.3-alpha to stable.

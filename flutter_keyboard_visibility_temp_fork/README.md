@@ -9,6 +9,7 @@ We don't recommend using this package as a dependency in packages published to [
 - [#164](https://github.com/MisterJimson/flutter_keyboard_visibility/pull/164)
 - [#159](https://github.com/MisterJimson/flutter_keyboard_visibility/pull/159)
 - [#155](https://github.com/MisterJimson/flutter_keyboard_visibility/pull/155)
+- [singerdmx/flutter-quill#2394](https://github.com/singerdmx/flutter-quill/issues/2394)
 
 We don't plan on introduce breaking changes unless there is a strong reason even if we will have less clean API. [flutter_keyboard_visibility_platform_interface](https://pub.dev/packages/flutter_keyboard_visibility_platform_interface) is still a dependency.
 

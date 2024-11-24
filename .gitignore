@@ -4,3 +4,7 @@
 !idea/
 .idea/*
 !/.idea/runConfigurations/
+
+# iOS and macOS dependencies
+.build/
+.swiftpm/
