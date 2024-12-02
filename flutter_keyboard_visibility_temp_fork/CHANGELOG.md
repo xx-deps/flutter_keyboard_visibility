@@ -1,3 +1,7 @@
+## [0.1.5] - December 2, 2024
+
+- Updates the threshold for detecting the keyboard state from 85% to 82% of the visible screen height. This improves accuracy in determining whether the keyboard is visible [#5](https://github.com/EchoEllet/flutter_keyboard_visibility_temp_fork/pull/5/).
+
 ## [0.1.4] - November 24, 2024
 
 * Supports Swift package manager.
