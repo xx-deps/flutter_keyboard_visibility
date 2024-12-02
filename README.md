@@ -15,8 +15,9 @@ We don't plan on introduce breaking changes unless there is a strong reason even
 
 This fork aim to solve the following issues:
 
-- Use the Flutter default `compileSdkVersion` as a workaround to a bug in Flutter [#63533](https://github.com/flutter/flutter/issues/63533). Allowing you to target the latest `compileSdkVersion`
+- Use the Flutter default `compileSdkVersion` as a workaround to a bug [flutter#63533](https://github.com/flutter/flutter/issues/63533). Allowing you to target the latest `compileSdkVersion`
 - Support for [Flutter/WASM](https://docs.flutter.dev/platform-integration/web/wasm). Currently using `dart:html` or `package:js` will prevent from compiling the app using Wasm target. It looks like `flutter_keyboard_visibility_web` was created to always return `false` on web platforms. The Web is still not supported with this fork.
+- Support for [Swift Package Manager](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/).
 
 Your existing code that use `package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart` should work by replacing it with:
 
